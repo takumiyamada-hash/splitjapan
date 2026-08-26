@@ -24,7 +24,8 @@
   <section id="setup" class="screen">
     <header class="brand">
       <h1>SplitJapan</h1>
-      <p class="tagline">The bill splitter built for Japan trips.<br>No signup. No app. Just a link.</p>
+      <p class="tagline">Never end a Japan trip with<br>&ldquo;wait&hellip; who owes who how much?&rdquo;</p>
+      <p class="tagline-sub">Free · no signup · no app. One person tracks, everyone opens a link.</p>
     </header>
     <div class="card">
       <label class="field-label" for="trip-name">Trip name</label>
@@ -46,7 +47,7 @@
         <li><strong>Everyone opens one link.</strong> No accounts, no installs. Each person sees their balance in their own currency.</li>
         <li><strong>Settle once, at the end.</strong> "Emma pays Ben ¥9,230" — the minimum number of transfers, not forty IOUs.</li>
       </ol>
-      <p class="hint">Your data stays in this browser and the share link. Nothing is uploaded.<br>New to Japan-trip money? <a class="foot-link" href="guides/">Read the guides</a> — tax-free changes, cash amounts, why the izakaya says no.</p>
+      <p class="hint">Your data lives in this browser and in the link itself — there are no SplitJapan servers to crash or lose it.<br>New to Japan-trip money? <a class="foot-link" href="guides/">Read the guides</a> — tax-free changes, cash amounts, why the izakaya says no.</p>
     </div>
   </section>
 
@@ -123,6 +124,7 @@
         <button id="cancel-expense" class="ghost-btn" type="button">Cancel</button>
         <button id="save-expense" class="primary-btn" type="button">Save</button>
       </div>
+      <button id="save-and-another" class="ghost-btn save-another" type="button">Save &amp; add another</button>
     </div>
   </div>
 
@@ -149,6 +151,8 @@
       <div class="sheet-handle"></div>
       <h2 class="section-title">Share with your group</h2>
       <p class="hint">Anyone who opens this link sees the latest version — no install, no account. After you add new expenses, share again to sync.</p>
+      <div id="qr-box" class="qr-box"></div>
+      <p class="hint center">At the table? Let everyone scan this instead.</p>
       <textarea id="share-url" readonly rows="3"></textarea>
       <div class="sheet-actions">
         <button id="close-share" class="ghost-btn" type="button">Close</button>
@@ -159,6 +163,7 @@
 
   <div id="toast" class="toast hidden"></div>
 </div>
+<script src="qrcode.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 /* SplitJapan service worker — network-first with offline fallback.
    Keeps the app openable in the subway; online visits always get the latest deploy. */
-const CACHE = "sj-shell-v1";
-const SHELL = ["/", "/style.css", "/app.js", "/icon-192.png", "/icon-512.png", "/manifest.json"];
+const CACHE = "sj-shell-v2";
+const SHELL = ["/", "/style.css", "/app.js", "/qrcode.min.js", "/icon-192.png", "/icon-512.png", "/manifest.json"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));

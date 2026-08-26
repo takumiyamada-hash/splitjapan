@@ -306,6 +306,7 @@ function openSheet(expenseId = null) {
   $("note-input").value = e ? (e.note || "") : "";
   $("taxfree-check").checked = sheetState.tf;
   $("delete-expense").classList.toggle("hidden", !e);
+  $("save-and-another").classList.toggle("hidden", !!e);
   renderSheet();
   $("sheet-backdrop").classList.remove("hidden");
   if (!e) setTimeout(() => $("amount-input").focus(), 60);
@@ -359,7 +360,7 @@ function cycleCurrency() {
   renderSheet();
 }
 
-function saveExpense() {
+function saveExpense(keepOpen) {
   const amt = parseFloat($("amount-input").value.replace(/,/g, ""));
   if (!amt || amt <= 0 || !isFinite(amt)) { toast("Enter an amount"); return; }
   if (sheetState.split.length === 0) { toast("Pick who shares this"); return; }
@@ -381,6 +382,17 @@ function saveExpense() {
     trip.ex.push({ i: uid(), ...base });
   }
   saveTrip();
+  if (keepOpen === true && !editingId) {
+    // the end-of-day batch entry pattern: keep payer/split/category, clear the rest
+    $("amount-input").value = "";
+    $("note-input").value = "";
+    $("taxfree-check").checked = false;
+    renderSheet();
+    render();
+    $("amount-input").focus();
+    toast("Saved — next one");
+    return;
+  }
   closeSheet();
   render();
 }
@@ -393,6 +405,16 @@ async function openShare() {
   const enc = await encodeTrip(trip);
   const url = location.origin + location.pathname + "#d=" + enc;
   $("share-url").value = url;
+  const box = $("qr-box");
+  box.innerHTML = "";
+  try {
+    if (typeof qrcode === "function") {
+      const qr = qrcode(0, "M");
+      qr.addData(url);
+      qr.make();
+      box.innerHTML = qr.createSvgTag({ cellSize: 3, margin: 2, scalable: true });
+    }
+  } catch (_) { box.innerHTML = ""; }
   $("share-backdrop").classList.remove("hidden");
 }
 
@@ -445,7 +467,8 @@ async function boot() {
   initSetup();
 
   $("add-expense-btn").onclick = () => openSheet();
-  $("save-expense").onclick = saveExpense;
+  $("save-expense").onclick = () => saveExpense(false);
+  $("save-and-another").onclick = () => saveExpense(true);
   $("cancel-expense").onclick = closeSheet;
   $("delete-expense").onclick = () => {
     trip.ex = trip.ex.filter(x => x.i !== editingId);
