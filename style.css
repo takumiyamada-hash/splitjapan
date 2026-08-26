@@ -211,6 +211,14 @@ input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 
 
 .foot-link { color: var(--accent); }
 
+.how-it-works .hiw-list { padding-left: 20px; }
+.how-it-works .hiw-list li { margin-bottom: 10px; font-size: 0.95rem; line-height: 1.5; }
+.how-it-works .hint { margin-top: 14px; }
+
+.share-btn.attention { background: var(--accent); border-color: var(--accent); color: #fff; }
+.add-member-later { border-style: dashed; color: var(--muted); background: none; }
+.settle-line[data-from] { cursor: pointer; }
+
 /* ---- toast ---- */
 .toast {
   position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);

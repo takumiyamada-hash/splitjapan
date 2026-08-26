@@ -204,12 +204,26 @@ function render() {
       const from = member(f.from), to = member(f.to);
       const homeCur = from.c;
       const home = homeCur !== "JPY" ? `<span class="home">≈ ${fmt(homeCur, jpyTo(homeCur, f.jpy))}</span>` : "";
-      return `<div class="settle-line">
+      return `<div class="settle-line" data-from="${f.from}" data-to="${f.to}" data-jpy="${Math.round(f.jpy)}" title="Tap to copy a payment request">
         <div class="flow"><strong>${esc(from.n)}</strong> pays <strong>${esc(to.n)}</strong></div>
         <div class="val"><span class="jpy">${fmt("JPY", f.jpy)}</span>${home}</div>
       </div>`;
-    }).join("");
+    }).join("") + `<p class="hint">Tap a line to copy a payment request you can paste into your group chat.</p>`;
+    st.querySelectorAll(".settle-line").forEach(el => el.onclick = async () => {
+      const from = member(el.dataset.from), to = member(el.dataset.to);
+      const jpy = +el.dataset.jpy;
+      const home = from.c !== "JPY" ? ` (about ${fmt(from.c, jpyTo(from.c, jpy))})` : "";
+      const msg = `${from.n} pays ${to.n} ${fmt("JPY", jpy)}${home} to settle "${trip.name}" — via splitjapan.com`;
+      try { await navigator.clipboard.writeText(msg); toast("Payment request copied"); }
+      catch (_) { toast(msg); }
+    });
   }
+
+  // share staleness nudge
+  const lastShared = lsGet("sj_shared_" + trip.id) || 0;
+  const stale = trip.ex.length > 0 && (trip.u || 0) > lastShared;
+  $("share-btn").textContent = stale ? "Share latest" : "Share";
+  $("share-btn").classList.toggle("attention", stale);
 
   // expense list
   const list = $("expense-list");
@@ -390,6 +404,28 @@ async function copyShare() {
   } catch (_) {
     try { await navigator.clipboard.writeText(url); toast("Link copied"); } catch (_) { toast("Copy manually"); }
   }
+  lsSet("sj_shared_" + trip.id, trip.u || Date.now());
+  render();
+}
+
+/* ================= add member mid-trip ================= */
+
+function openMemberSheet() {
+  $("new-member-name").value = "";
+  const sel = $("new-member-cur");
+  sel.innerHTML = CURRENCIES.map(c => `<option ${c === "USD" ? "selected" : ""}>${c}</option>`).join("");
+  $("member-backdrop").classList.remove("hidden");
+  setTimeout(() => $("new-member-name").focus(), 60);
+}
+
+function saveMember() {
+  const n = $("new-member-name").value.trim();
+  if (!n) { toast("Enter a name"); return; }
+  trip.members.push({ i: uid(), n, c: $("new-member-cur").value });
+  saveTrip();
+  $("member-backdrop").classList.add("hidden");
+  render();
+  toast(`${n} added`);
 }
 
 /* ================= toast ================= */
@@ -421,6 +457,15 @@ async function boot() {
 
   $("share-btn").onclick = openShare;
   $("copy-share").onclick = copyShare;
+  $("add-member-later").onclick = openMemberSheet;
+  $("save-member").onclick = saveMember;
+  $("cancel-member").onclick = () => $("member-backdrop").classList.add("hidden");
+  $("member-backdrop").addEventListener("click", e => { if (e.target.id === "member-backdrop") $("member-backdrop").classList.add("hidden"); });
+  $("new-member-name").addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); saveMember(); } });
+
+  if ("serviceWorker" in navigator && location.protocol === "https:") {
+    navigator.serviceWorker.register("/sw.js").catch(() => {});
+  }
   $("close-share").onclick = () => $("share-backdrop").classList.add("hidden");
   $("share-backdrop").addEventListener("click", e => { if (e.target.id === "share-backdrop") $("share-backdrop").classList.add("hidden"); });
 

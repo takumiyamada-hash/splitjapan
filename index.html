@@ -13,6 +13,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#101014">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -35,6 +37,17 @@
       <button id="start-trip" class="primary-btn" type="button">Start tracking</button>
       <p class="hint">Each person picks their home currency — everyone sees<br>their own share in their own money.</p>
     </div>
+
+    <div class="card how-it-works">
+      <h2 class="section-title">How it works</h2>
+      <ol class="hiw-list">
+        <li><strong>One of you pays the table.</strong> Japanese restaurants often won't split bills — so don't fight it. One person covers it.</li>
+        <li><strong>Log it in 15 seconds.</strong> Amount in yen, who paid, who shares. Rates lock at entry, so nobody argues about conversion later.</li>
+        <li><strong>Everyone opens one link.</strong> No accounts, no installs. Each person sees their balance in their own currency.</li>
+        <li><strong>Settle once, at the end.</strong> "Emma pays Ben ¥9,230" — the minimum number of transfers, not forty IOUs.</li>
+      </ol>
+      <p class="hint">Your data stays in this browser and the share link. Nothing is uploaded.<br>New to Japan-trip money? <a class="foot-link" href="guides/">Read the guides</a> — tax-free changes, cash amounts, why the izakaya says no.</p>
+    </div>
   </section>
 
   <!-- ===== Main screen ===== -->
@@ -50,6 +63,7 @@
     <div class="viewing-as card slim">
       <span class="field-label inline">I am</span>
       <div id="viewer-chips" class="chip-row"></div>
+      <button id="add-member-later" class="chip add-member-later" type="button">+ Add person</button>
     </div>
 
     <div id="my-balance" class="balance-hero card"></div>
@@ -108,6 +122,23 @@
         <button id="delete-expense" class="ghost-btn danger hidden" type="button">Delete</button>
         <button id="cancel-expense" class="ghost-btn" type="button">Cancel</button>
         <button id="save-expense" class="primary-btn" type="button">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Add member sheet ===== -->
+  <div id="member-backdrop" class="backdrop hidden">
+    <div class="sheet" role="dialog" aria-label="Add person">
+      <div class="sheet-handle"></div>
+      <h2 class="section-title">Add a person mid-trip</h2>
+      <p class="hint">They'll be included in new expenses from now on. Past expenses stay as they were.</p>
+      <div class="member-row" style="margin-top:12px">
+        <input id="new-member-name" type="text" placeholder="Name" maxlength="20" autocomplete="off">
+        <select id="new-member-cur"></select>
+      </div>
+      <div class="sheet-actions">
+        <button id="cancel-member" class="ghost-btn" type="button">Cancel</button>
+        <button id="save-member" class="primary-btn" type="button">Add</button>
       </div>
     </div>
   </div>
