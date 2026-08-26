@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SplitJapan — Split your Japan trip, not your friendships</title>
+<meta name="description" content="The bill splitter built for Japan trips. No signup, no app install. Enter in yen, settle in your currency. Works offline in the subway.">
+<meta property="og:title" content="SplitJapan — Japan trip bill splitting">
+<meta property="og:description" content="One person paid the izakaya bill again? Track it in 15 seconds. No signup. Everyone just opens a link.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- ===== Setup screen ===== -->
+  <section id="setup" class="screen">
+    <header class="brand">
+      <h1>SplitJapan</h1>
+      <p class="tagline">The bill splitter built for Japan trips.<br>No signup. No app. Just a link.</p>
+    </header>
+    <div class="card">
+      <label class="field-label" for="trip-name">Trip name</label>
+      <input id="trip-name" type="text" placeholder="Tokyo &amp; Kyoto 2026" maxlength="40" autocomplete="off">
+
+      <label class="field-label">Who's on this trip?</label>
+      <div id="member-rows"></div>
+      <button id="add-member" class="ghost-btn" type="button">+ Add person</button>
+
+      <button id="start-trip" class="primary-btn" type="button">Start tracking</button>
+      <p class="hint">Each person picks their home currency — everyone sees<br>their own share in their own money.</p>
+    </div>
+  </section>
+
+  <!-- ===== Main screen ===== -->
+  <section id="main" class="screen hidden">
+    <header class="topbar">
+      <div>
+        <h1 id="trip-title">Trip</h1>
+        <p id="trip-sub" class="sub"></p>
+      </div>
+      <button id="share-btn" class="share-btn" type="button">Share</button>
+    </header>
+
+    <div class="viewing-as card slim">
+      <span class="field-label inline">I am</span>
+      <div id="viewer-chips" class="chip-row"></div>
+    </div>
+
+    <div id="my-balance" class="balance-hero card"></div>
+
+    <button id="add-expense-btn" class="primary-btn big" type="button">+ Add expense</button>
+
+    <div class="card">
+      <h2 class="section-title">Settle up</h2>
+      <div id="settlement"></div>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">Expenses <span id="expense-count" class="count"></span></h2>
+      <div id="expense-list"></div>
+    </div>
+
+    <div id="taxfree-summary" class="card hidden"></div>
+
+    <footer class="foot">
+      <button id="new-trip" class="ghost-btn danger" type="button">Start a new trip</button>
+      <p class="hint">Data lives in this browser and in the share link. Nothing is uploaded.</p>
+      <p class="hint" id="rate-status"></p>
+      <p class="hint"><a class="foot-link" href="guides/">Japan trip money guides</a> — tax-free changes Nov 2026, splitting bills, cash survival</p>
+    </footer>
+  </section>
+
+  <!-- ===== Add expense sheet ===== -->
+  <div id="sheet-backdrop" class="backdrop hidden">
+    <div id="expense-sheet" class="sheet" role="dialog" aria-label="Add expense">
+      <div class="sheet-handle"></div>
+      <h2 id="sheet-title" class="section-title">Add expense</h2>
+
+      <div class="amount-wrap">
+        <button id="currency-toggle" class="currency-btn" type="button">JPY</button>
+        <input id="amount-input" type="text" inputmode="decimal" placeholder="0" autocomplete="off">
+      </div>
+      <p id="amount-hint" class="hint center"></p>
+
+      <label class="field-label">What was it?</label>
+      <div id="category-chips" class="chip-row"></div>
+
+      <label class="field-label">Paid by</label>
+      <div id="payer-chips" class="chip-row"></div>
+
+      <label class="field-label">Split among</label>
+      <div id="split-chips" class="chip-row"></div>
+
+      <label class="taxfree-row">
+        <input id="taxfree-check" type="checkbox">
+        <span>Tax-free purchase <small>(refund claimed at the airport from Nov 2026)</small></span>
+      </label>
+
+      <input id="note-input" type="text" placeholder="Note (optional) — e.g. Izakaya in Golden Gai" maxlength="60" autocomplete="off">
+
+      <div class="sheet-actions">
+        <button id="delete-expense" class="ghost-btn danger hidden" type="button">Delete</button>
+        <button id="cancel-expense" class="ghost-btn" type="button">Cancel</button>
+        <button id="save-expense" class="primary-btn" type="button">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Share sheet ===== -->
+  <div id="share-backdrop" class="backdrop hidden">
+    <div class="sheet" role="dialog" aria-label="Share trip">
+      <div class="sheet-handle"></div>
+      <h2 class="section-title">Share with your group</h2>
+      <p class="hint">Anyone who opens this link sees the latest version — no install, no account. After you add new expenses, share again to sync.</p>
+      <textarea id="share-url" readonly rows="3"></textarea>
+      <div class="sheet-actions">
+        <button id="close-share" class="ghost-btn" type="button">Close</button>
+        <button id="copy-share" class="primary-btn" type="button">Copy link</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

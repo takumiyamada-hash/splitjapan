@@ -1,0 +1,24 @@
+/* guides layer on top of app style.css */
+.guide-page { max-width: 640px; }
+.home-link { color: inherit; text-decoration: none; }
+.guide-kicker { color: var(--accent); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+.guide-card { display: block; text-decoration: none; color: inherit; }
+.guide-card h2 { font-size: 1.25rem; letter-spacing: -0.01em; line-height: 1.3; margin-bottom: 8px; }
+.guide-desc { color: var(--muted); font-size: 0.95rem; }
+.center-btn { text-align: center; text-decoration: none; }
+
+article h1 { font-size: 1.7rem; letter-spacing: -0.02em; line-height: 1.25; margin: 10px 0 8px; }
+article h2 { font-size: 1.2rem; margin: 28px 0 10px; letter-spacing: -0.01em; }
+article p, article li { font-size: 1rem; line-height: 1.65; margin-bottom: 12px; }
+article ul, article ol { padding-left: 22px; margin-bottom: 14px; }
+article .byline { color: var(--muted); font-size: 0.85rem; margin-bottom: 20px; }
+article a { color: var(--accent); }
+article table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.92rem; }
+article th, article td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+article th { color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.callout { background: var(--card-2); border-left: 3px solid var(--accent); border-radius: 8px; padding: 12px 14px; margin: 14px 0; font-size: 0.95rem; }
+.calc-row { display: flex; align-items: center; gap: 10px; margin: 10px 0; }
+.calc-row input { flex: 1; font-size: 1.2rem; font-weight: 700; text-align: right; }
+.calc-out { font-size: 1.05rem; margin-top: 12px; }
+.calc-out strong { font-size: 1.4rem; }
+.small { color: var(--muted); font-size: 0.82rem; }
