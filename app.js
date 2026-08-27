@@ -493,7 +493,7 @@ async function boot() {
   $("share-backdrop").addEventListener("click", e => { if (e.target.id === "share-backdrop") $("share-backdrop").classList.add("hidden"); });
 
   $("new-trip").onclick = () => {
-    if (confirm("Start a new trip? The current trip stays available through any link you already shared.")) {
+    if (confirm("Start a new trip? This one is kept safe — any shared link still opens it, and nothing is deleted.")) {
       if (trip) lsSet("sj_trip_" + trip.id, trip); // archive, never destroy
       trip = null; viewerId = null;
       localStorage.removeItem("sj_trip");
