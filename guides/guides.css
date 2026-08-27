@@ -134,6 +134,32 @@
 }
 .to-top.show { opacity: 0.92; pointer-events: auto; }
 
+/* --- mobile: prose-heavy tables become stacked cards --- */
+@media (max-width: 899px) {
+  .grid-table.stack-mobile { display: block; background: none; border: none; border-radius: 0; }
+  .grid-table.stack-mobile tbody { display: block; }
+  .grid-table.stack-mobile tr {
+    display: block; background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 6px 2px; margin-bottom: 10px;
+  }
+  .grid-table.stack-mobile tr:first-child { display: none; }
+  .grid-table.stack-mobile td { display: block; border: none; padding: 9px 14px; }
+  .grid-table.stack-mobile td::before {
+    content: attr(data-label); display: block; color: var(--muted);
+    font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em;
+    font-weight: 800; margin-bottom: 3px;
+  }
+  .grid-table.stack-mobile td[data-label="—"]::before { display: none; }
+  .grid-table.stack-mobile td[data-label="—"] { font-size: 1.02rem; padding-bottom: 4px; }
+
+  /* the wide comparison table: fit all four columns instead of scrolling */
+  .grid-table.compact { font-size: 0.82rem; }
+  .table-scroll .grid-table.compact { min-width: 0; }
+  .grid-table.compact th, .grid-table.compact td { padding: 9px 7px; }
+  .to-top { padding: 9px 15px; font-size: 0.8rem; }
+  .hub-page { padding-bottom: 96px; }
+}
+
 /* --- desktop --- */
 @media (min-width: 900px) {
   .hub-header h1 { font-size: 3rem; }

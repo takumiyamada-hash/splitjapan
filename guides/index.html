@@ -118,10 +118,10 @@
       <section id="atm" class="hub-section">
         <h2><span class="sec-num">3</span>Getting cash in Japan</h2>
         <p>Not every Japanese ATM takes foreign cards. Two networks reliably do, both with English menus and both everywhere:</p>
-        <table class="grid-table">
+        <table class="grid-table stack-mobile">
           <tr><th>Network</th><th>Where</th><th>Notes</th></tr>
-          <tr><td><strong>Seven Bank</strong></td><td>Inside every 7-Eleven</td><td>The default answer. Open 24h in most locations</td></tr>
-          <tr><td><strong>Japan Post Bank</strong></td><td>Post offices, some stations</td><td>Best backup, strong rural coverage; post office hours apply</td></tr>
+          <tr><td data-label="Network"><strong>Seven Bank</strong></td><td data-label="Where">Inside every 7-Eleven</td><td data-label="Notes">The default answer. Open 24h in most locations</td></tr>
+          <tr><td data-label="Network"><strong>Japan Post Bank</strong></td><td data-label="Where">Post offices, some stations</td><td data-label="Notes">Best backup, strong rural coverage; post office hours apply</td></tr>
         </table>
         <p>Expect a small per-withdrawal fee, typically in the <strong>¥110–¥220</strong> range depending on network and amount, <em>plus</em> whatever your own bank charges. Per-withdrawal limits are commonly up to <strong>¥100,000</strong>, lower for some card types.</p>
         <div class="quick-answer">
@@ -134,21 +134,21 @@
         <h2><span class="sec-num">4</span>What payment works where</h2>
         <p>The single most useful table in this guide. "Card" means an internationally issued credit or debit card.</p>
         <div class="table-scroll">
-          <table class="grid-table works">
-            <tr><th>Place</th><th>Card</th><th>IC (Suica)</th><th>Cash</th></tr>
+          <table class="grid-table works compact">
+            <tr><th>Place</th><th>Card</th><th>IC</th><th>Cash</th></tr>
             <tr><td>Convenience stores</td><td class="ok">Yes</td><td class="ok">Yes</td><td class="ok">Yes</td></tr>
-            <tr><td>Chain restaurants, cafés</td><td class="ok">Yes</td><td class="ok">Usually</td><td class="ok">Yes</td></tr>
-            <tr><td>Department stores, big retail</td><td class="ok">Yes</td><td class="ok">Usually</td><td class="ok">Yes</td></tr>
+            <tr><td>Chain restaurants</td><td class="ok">Yes</td><td class="ok">Usually</td><td class="ok">Yes</td></tr>
+            <tr><td>Department stores</td><td class="ok">Yes</td><td class="ok">Usually</td><td class="ok">Yes</td></tr>
             <tr><td>Hotels</td><td class="ok">Yes</td><td class="no">Rarely</td><td class="ok">Yes</td></tr>
-            <tr><td>Trains &amp; subways</td><td class="mid">Ticket machines vary</td><td class="ok">Yes — best option</td><td class="ok">Yes</td></tr>
-            <tr><td>Small izakaya, family restaurants</td><td class="mid">Often not</td><td class="no">Rarely</td><td class="ok">Yes</td></tr>
-            <tr><td>Ramen ticket machines</td><td class="no">No</td><td class="mid">Newer ones only</td><td class="ok">Yes</td></tr>
-            <tr><td>Shrines, temples, offerings</td><td class="no">No</td><td class="no">No</td><td class="ok">Yes (coins)</td></tr>
-            <tr><td>Festival stalls, street food</td><td class="no">Mostly no</td><td class="no">No</td><td class="ok">Yes</td></tr>
-            <tr><td>Rural buses</td><td class="no">No</td><td class="mid">Region-dependent</td><td class="ok">Yes (exact-ish)</td></tr>
+            <tr><td>Trains &amp; subways</td><td class="mid">Varies</td><td class="ok">Best</td><td class="ok">Yes</td></tr>
+            <tr><td>Small izakaya</td><td class="mid">Often not</td><td class="no">Rarely</td><td class="ok">Yes</td></tr>
+            <tr><td>Ramen ticket machines</td><td class="no">No</td><td class="mid">Newer only</td><td class="ok">Yes</td></tr>
+            <tr><td>Shrines &amp; temples</td><td class="no">No</td><td class="no">No</td><td class="ok">Coins</td></tr>
+            <tr><td>Festival &amp; street food</td><td class="no">Rarely</td><td class="no">No</td><td class="ok">Yes</td></tr>
+            <tr><td>Rural buses</td><td class="no">No</td><td class="mid">Varies</td><td class="ok">Yes</td></tr>
             <tr><td>Taxis (cities)</td><td class="ok">Usually</td><td class="ok">Usually</td><td class="ok">Yes</td></tr>
-            <tr><td>Taxis (rural)</td><td class="mid">Sometimes not</td><td class="no">Rarely</td><td class="ok">Yes</td></tr>
-            <tr><td>IC card top-up machines</td><td class="no">No (foreign cards)</td><td>—</td><td class="ok">Yes</td></tr>
+            <tr><td>Taxis (rural)</td><td class="mid">Often not</td><td class="no">Rarely</td><td class="ok">Yes</td></tr>
+            <tr><td>IC top-up machines</td><td class="no">No</td><td>—</td><td class="ok">Yes</td></tr>
           </table>
         </div>
         <p class="small">One more gap worth knowing: <strong>PayPay and other Japanese QR wallets are not open to tourists</strong> — they need a Japanese phone number. Since 2025, several Asian wallets (Alipay, GCash and others) can scan PayPay merchant codes through partner arrangements, but Western wallets like Apple Pay's card function, Venmo or Cash App cannot. For most visitors, QR-only shops mean cash.</p>
@@ -158,11 +158,11 @@
       <section id="ic" class="hub-section">
         <h2><span class="sec-num">5</span>IC cards: Suica, PASMO, ICOCA</h2>
         <p>One rechargeable card taps you through every train gate, most buses, convenience stores and vending machines nationwide. Which version you should get depends entirely on your phone:</p>
-        <table class="grid-table">
+        <table class="grid-table stack-mobile">
           <tr><th>You have</th><th>Get this</th><th>Why</th></tr>
-          <tr><td><strong>iPhone</strong></td><td>Suica in Apple Wallet</td><td>Built into the phone already — add it in Wallet, top up with Apple Pay, skip every queue. The most under-communicated fact in Japan travel.</td></tr>
-          <tr><td><strong>Android bought outside Japan</strong></td><td>A physical card</td><td>Most foreign Androids lack the FeliCa chip. No app or setting fixes this. Unregistered physical Suica/PASMO sales resumed in March 2025.</td></tr>
-          <tr><td><strong>Staying 28+ days</strong></td><td>Regular unregistered card, not Welcome Suica</td><td>Welcome Suica expires; the regular card doesn't.</td></tr>
+          <tr><td data-label="You have"><strong>iPhone</strong></td><td data-label="Get this">Suica in Apple Wallet</td><td data-label="Why">Built into the phone already — add it in Wallet, top up with Apple Pay, skip every queue. The most under-communicated fact in Japan travel.</td></tr>
+          <tr><td data-label="You have"><strong>Android bought outside Japan</strong></td><td data-label="Get this">A physical card</td><td data-label="Why">Most foreign Androids lack the FeliCa chip. No app or setting fixes this. Unregistered physical Suica/PASMO sales resumed in March 2025.</td></tr>
+          <tr><td data-label="You have"><strong>Staying 28+ days</strong></td><td data-label="Get this">Regular unregistered card, not Welcome Suica</td><td data-label="Why">Welcome Suica expires; the regular card doesn't.</td></tr>
         </table>
         <div class="warn">
           <strong>The trap that costs travelers real money:</strong> tourist-oriented Welcome Suica cards expire — 28 days for the physical card, 180 days for the mobile version — and <strong>the remaining balance is not refunded</strong>. Getting a refund normally requires a Japanese bank account. Load small amounts near the end of your trip and spend the balance down before you fly.
@@ -233,13 +233,13 @@
         <div class="warn">
           <strong>The system changes completely on November 1, 2026.</strong> Until October 31, you show your passport and the 10% consumption tax is deducted at the register. From November 1, you pay the full price in store and claim the tax back when you leave Japan.
         </div>
-        <table class="grid-table">
+        <table class="grid-table stack-mobile">
           <tr><th></th><th>Until Oct 31, 2026</th><th>From Nov 1, 2026</th></tr>
-          <tr><td>At the store</td><td>Pay price minus tax</td><td>Pay full price; purchase registered digitally</td></tr>
-          <tr><td>Getting the tax back</td><td>Instantly, in store</td><td>Refunded after customs check when you exit Japan</td></tr>
-          <tr><td>Sealed bags on cosmetics, food, medicine</td><td>Required</td><td>Abolished — use your purchases during the trip</td></tr>
-          <tr><td>¥500,000 cap on consumables</td><td>Applies</td><td>Abolished</td></tr>
-          <tr><td>Minimum spend</td><td colspan="2">¥5,000 pre-tax, same store, same day — unchanged</td></tr>
+          <tr><td data-label="—"><strong>At the store</strong></td><td data-label="Until Oct 31">Pay price minus tax</td><td data-label="From Nov 1">Pay full price; purchase registered digitally</td></tr>
+          <tr><td data-label="—"><strong>Getting the tax back</strong></td><td data-label="Until Oct 31">Instantly, in store</td><td data-label="From Nov 1">Refunded after customs check when you exit Japan</td></tr>
+          <tr><td data-label="—"><strong>Sealed bags on cosmetics, food, medicine</strong></td><td data-label="Until Oct 31">Required</td><td data-label="From Nov 1">Abolished — use your purchases during the trip</td></tr>
+          <tr><td data-label="—"><strong>¥500,000 cap on consumables</strong></td><td data-label="Until Oct 31">Applies</td><td data-label="From Nov 1">Abolished</td></tr>
+          <tr><td data-label="—"><strong>Minimum spend</strong></td><td data-label="Both" colspan="2">¥5,000 pre-tax, same store, same day — unchanged</td></tr>
         </table>
         <p>Two things the announcements don't emphasize. First, you won't get the full 10% back: retailers and refund operators are expected to deduct a handling fee of roughly <strong>1.55–2.2%</strong>. Second, the customs check happens <em>before</em> airline check-in, so keep tax-free purchases accessible rather than buried in a checked bag.</p>
 
@@ -288,14 +288,14 @@
       <!-- ================= WRONG ================= -->
       <section id="wrong" class="hub-section">
         <h2><span class="sec-num">13</span>When something goes wrong</h2>
-        <table class="grid-table">
+        <table class="grid-table stack-mobile two-col">
           <tr><th>Problem</th><th>What to do</th></tr>
-          <tr><td>Card declined online</td><td>Check your card app — the fraud "was this you?" prompt is often waiting. Try a different card brand. Fall back to buying in person, where 3-D Secure doesn't apply.</td></tr>
-          <tr><td>Card declined at a machine</td><td>Try a staffed counter, then a different machine, then cash. Some older machines never accepted foreign cards.</td></tr>
-          <tr><td>ATM won't dispense</td><td>Use 7-Eleven or Japan Post specifically. If it still fails, your bank has likely blocked the transaction — call them.</td></tr>
-          <tr><td>Lost card</td><td>Freeze it in your bank app immediately, then use your second card. This is why two cards from two banks matters.</td></tr>
-          <tr><td>Out of cash, everything closed</td><td>7-Eleven ATMs are open around the clock in most locations.</td></tr>
-          <tr><td>Medical treatment</td><td>Clinics commonly expect payment at the time of treatment, and costs are not trivial for visitors. Travel insurance is the single highest-value purchase for a Japan trip; buy it before you fly.</td></tr>
+          <tr><td data-label="Problem"><strong>Card declined online</strong></td><td data-label="What to do">Check your card app — the fraud "was this you?" prompt is often waiting. Try a different card brand. Fall back to buying in person, where 3-D Secure doesn't apply.</td></tr>
+          <tr><td data-label="Problem"><strong>Card declined at a machine</strong></td><td data-label="What to do">Try a staffed counter, then a different machine, then cash. Some older machines never accepted foreign cards.</td></tr>
+          <tr><td data-label="Problem"><strong>ATM won't dispense</strong></td><td data-label="What to do">Use 7-Eleven or Japan Post specifically. If it still fails, your bank has likely blocked the transaction — call them.</td></tr>
+          <tr><td data-label="Problem"><strong>Lost card</strong></td><td data-label="What to do">Freeze it in your bank app immediately, then use your second card. This is why two cards from two banks matters.</td></tr>
+          <tr><td data-label="Problem"><strong>Out of cash, everything closed</strong></td><td data-label="What to do">7-Eleven ATMs are open around the clock in most locations.</td></tr>
+          <tr><td data-label="Problem"><strong>Medical treatment</strong></td><td data-label="What to do">Clinics commonly expect payment at the time of treatment, and costs are not trivial for visitors. Travel insurance is the single highest-value purchase for a Japan trip; buy it before you fly.</td></tr>
         </table>
       </section>
 
