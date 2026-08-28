@@ -199,3 +199,6 @@ article th { color: var(--muted); font-size: 0.78rem; text-transform: uppercase;
 .calc-out { font-size: 1.05rem; margin-top: 12px; }
 .calc-out strong { font-size: 1.4rem; }
 .small { color: var(--muted); font-size: 0.82rem; }
+
+.guide-backlink { color: var(--muted); font-size: 0.9rem; margin-top: 14px; text-align: center; line-height: 1.5; }
+.guide-backlink a { color: var(--accent); font-weight: 700; }
