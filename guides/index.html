@@ -251,9 +251,11 @@
 
         <div class="calc-card" id="calc-refund">
           <h3>Refund calculator (from Nov 1, 2026)</h3>
-          <div class="calc-row"><span>Total spent, tax included ¥</span><input id="spend" type="text" inputmode="numeric" placeholder="100,000"></div>
+          <p class="small">Two tax rates apply, so enter them separately. One store, one day.</p>
+          <div class="calc-row"><span>General goods (10%) ¥</span><input id="spend10" type="text" inputmode="numeric" placeholder="70,000"></div>
+          <div class="calc-row"><span>Food &amp; soft drinks (8%) ¥</span><input id="spend8" type="text" inputmode="numeric" placeholder="30,000"></div>
           <div class="calc-out" id="calc-result">Enter an amount to estimate your refund.</div>
-          <p class="small">Estimate: the consumption tax portion (10/110 of the tax-included price) minus a 2% handling fee. Actual fees vary by retailer and refund method.</p>
+          <p class="small">Estimate: tax actually charged (10/110 and 8/108) minus about 2% handling. Alcohol is 10%. The ¥5,000 minimum applies to the pre-tax total per store per day.</p>
         </div>
         <p class="more"><a href="tax-free-japan-2026">Full guide: the November 2026 tax-free change →</a></p>
       </section>
@@ -432,16 +434,25 @@
   cashIds.forEach(function (id) { document.getElementById(id).addEventListener("input", calcCash); });
 
   // ---- refund calculator ----
-  var spend = document.getElementById("spend");
+  var s10 = document.getElementById("spend10");
+  var s8 = document.getElementById("spend8");
   var refundOut = document.getElementById("calc-result");
-  spend.addEventListener("input", function () {
-    var v = parseFloat(spend.value.replace(/[^0-9.]/g, ""));
-    if (!v || v <= 0) { refundOut.textContent = "Enter an amount to estimate your refund."; return; }
-    if (v < 5500) { refundOut.textContent = "Below the ¥5,000 pre-tax minimum — no refund on this purchase alone."; return; }
-    var tax = v * 10 / 110;
-    refundOut.innerHTML = "Estimated refund: <strong>¥" + Math.round(tax * 0.98).toLocaleString("en-US") +
-      "</strong> <span class='small'>(tax paid ¥" + Math.round(tax).toLocaleString("en-US") + ", minus about 2% handling)</span>";
-  });
+  function rnum(el) { return parseFloat((el.value || "").replace(/[^0-9.]/g, "")) || 0; }
+  function calcRefund() {
+    var g = rnum(s10), f = rnum(s8);
+    if (!g && !f) { refundOut.textContent = "Enter an amount to estimate your refund."; return; }
+    var preTax = g * 100 / 110 + f * 100 / 108;
+    if (preTax < 5000) {
+      refundOut.textContent = "Pre-tax total about \u00a5" + Math.round(preTax).toLocaleString("en-US") +
+        " \u2014 below the \u00a55,000 per-store, per-day minimum.";
+      return;
+    }
+    var tax = g * 10 / 110 + f * 8 / 108;
+    refundOut.innerHTML = "Estimated refund: <strong>\u00a5" + Math.round(tax * 0.98).toLocaleString("en-US") +
+      "</strong> <span class='small'>(tax charged \u00a5" + Math.round(tax).toLocaleString("en-US") + ", minus about 2% handling)</span>";
+  }
+  s10.addEventListener("input", calcRefund);
+  s8.addEventListener("input", calcRefund);
 })();
 </script>
 </div>
