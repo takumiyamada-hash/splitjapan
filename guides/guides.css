@@ -202,3 +202,11 @@ article th { color: var(--muted); font-size: 0.78rem; text-transform: uppercase;
 
 .guide-backlink { color: var(--muted); font-size: 0.9rem; margin-top: 14px; text-align: center; line-height: 1.5; }
 .guide-backlink a { color: var(--accent); font-weight: 700; }
+
+.related .section-title { margin-bottom: 10px; }
+.related-list { list-style: none; padding: 0; margin: 0; }
+.related-list li { border-bottom: 1px solid var(--line); }
+.related-list li:last-child { border-bottom: none; }
+.related-list a { display: block; padding: 11px 2px; color: var(--text); text-decoration: none; font-size: 0.97rem; font-weight: 700; }
+.related-list a::after { content: " \203A"; color: var(--accent); }
+.related-list a:hover { color: var(--accent); }
