@@ -255,7 +255,7 @@
           <div class="calc-row"><span>General goods (10%) ¥</span><input id="spend10" type="text" inputmode="numeric" placeholder="70,000"></div>
           <div class="calc-row"><span>Food &amp; soft drinks (8%) ¥</span><input id="spend8" type="text" inputmode="numeric" placeholder="30,000"></div>
           <div class="calc-out" id="calc-result">Enter an amount to estimate your refund.</div>
-          <p class="small">Estimate: tax actually charged (10/110 and 8/108) minus about 2% handling. Alcohol is 10%. The ¥5,000 minimum applies to the pre-tax total per store per day.</p>
+          <p class="small">The tax owed is fixed arithmetic; the handling fee is not. Department stores have historically taken about 1.55% of the pre-tax price and figures up to 2.2% are reported for the new system, so we show a range. Alcohol is 10%. The ¥5,000 minimum applies to the pre-tax total per store, per day. <a href="tax-free-japan-2026">Full guide</a>.</p>
         </div>
         <p class="more"><a href="tax-free-japan-2026">Full guide: the November 2026 tax-free change →</a></p>
       </section>
@@ -438,18 +438,19 @@
   var s8 = document.getElementById("spend8");
   var refundOut = document.getElementById("calc-result");
   function rnum(el) { return parseFloat((el.value || "").replace(/[^0-9.]/g, "")) || 0; }
+  function ryen(n) { return "\u00a5" + Math.round(n).toLocaleString("en-US"); }
   function calcRefund() {
     var g = rnum(s10), f = rnum(s8);
     if (!g && !f) { refundOut.textContent = "Enter an amount to estimate your refund."; return; }
     var preTax = g * 100 / 110 + f * 100 / 108;
     if (preTax < 5000) {
-      refundOut.textContent = "Pre-tax total about \u00a5" + Math.round(preTax).toLocaleString("en-US") +
-        " \u2014 below the \u00a55,000 per-store, per-day minimum.";
+      refundOut.textContent = "Pre-tax total about " + ryen(preTax) + " \u2014 under the \u00a55,000 per-store, per-day minimum.";
       return;
     }
     var tax = g * 10 / 110 + f * 8 / 108;
-    refundOut.innerHTML = "Estimated refund: <strong>\u00a5" + Math.round(tax * 0.98).toLocaleString("en-US") +
-      "</strong> <span class='small'>(tax charged \u00a5" + Math.round(tax).toLocaleString("en-US") + ", minus about 2% handling)</span>";
+    refundOut.innerHTML = "You are owed <strong>" + ryen(tax) + "</strong> in tax." +
+      "<br><span class='small'>After handling fees, expect <strong>" + ryen(tax - preTax * 0.022) +
+      "\u2013" + ryen(tax) + "</strong> back (about " + ryen(tax - preTax * 0.0155) + " at a department store).</span>";
   }
   s10.addEventListener("input", calcRefund);
   s8.addEventListener("input", calcRefund);

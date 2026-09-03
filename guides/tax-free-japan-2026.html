@@ -46,11 +46,11 @@
 
     <div class="callout" id="calc">
       <strong>Refund calculator</strong>
-      <p class="small" style="margin-top:6px">Japan has two consumption tax rates, so the refund differs by what you bought. Enter tax-included totals for one store, one day.</p>
+      <p class="small" style="margin-top:6px">Japan has two consumption tax rates, so the refund depends on what you bought. Enter tax-included totals for <em>one store, one day</em>.</p>
       <div class="calc-row"><span>General goods — electronics, clothing, cosmetics <strong>(10%)</strong> ¥</span><input id="spend10" type="text" inputmode="numeric" placeholder="70,000"></div>
       <div class="calc-row"><span>Food &amp; non-alcoholic drinks <strong>(8%)</strong> ¥</span><input id="spend8" type="text" inputmode="numeric" placeholder="30,000"></div>
       <div class="calc-out" id="calc-result">Enter an amount to estimate your refund.</div>
-      <p class="small">Estimate: the consumption tax actually charged (10/110 of 10% items, 8/108 of 8% items) minus a 2% handling fee. Alcohol is taxed at 10%, not 8%. The ¥5,000 minimum applies to the pre-tax total per store per day. Actual fees vary by retailer and refund method.</p>
+      <p class="small">Why a range: the tax charged is fixed arithmetic, but the handling fee is not. Department stores have historically deducted around <strong>1.55% of the pre-tax price</strong>, and figures up to 2.2% have been reported for the new system; some shops may deduct nothing. Fee structures are still being announced retailer by retailer, so ask at the till before a large purchase. Alcohol is taxed at 10%, not 8%. The ¥5,000 minimum applies to the pre-tax total, per store, per day.</p>
     </div>
       <div class="calc-out" id="calc-result">Enter an amount to estimate your refund.</div>
       <p class="small">Estimate: consumption tax portion (10/110 of the tax-included price) minus a 2% handling fee. Actual fees vary by retailer and refund method.</p>
@@ -97,19 +97,24 @@
   var b = document.getElementById("spend8");
   var out = document.getElementById("calc-result");
   function num(el) { return parseFloat((el.value || "").replace(/[^0-9.]/g, "")) || 0; }
+  function yen(n) { return "\u00a5" + Math.round(n).toLocaleString("en-US"); }
   function calc() {
     var g = num(a), f = num(b);
     if (!g && !f) { out.textContent = "Enter an amount to estimate your refund."; return; }
     var preTax = g * 100 / 110 + f * 100 / 108;
     if (preTax < 5000) {
-      out.textContent = "Pre-tax total is about \u00a5" + Math.round(preTax).toLocaleString("en-US") +
-        " \u2014 below the \u00a55,000 minimum for one store in one day, so no refund on this purchase alone.";
+      out.textContent = "Pre-tax total is about " + yen(preTax) +
+        " \u2014 under the \u00a55,000 minimum for one store in one day, so this purchase alone does not qualify.";
       return;
     }
     var tax = g * 10 / 110 + f * 8 / 108;
-    out.innerHTML = "Estimated refund: <strong>\u00a5" + Math.round(tax * 0.98).toLocaleString("en-US") + "</strong>" +
-      " <span class='small'>(tax charged \u00a5" + Math.round(tax).toLocaleString("en-US") +
-      ", minus about 2% handling \u00b7 pre-tax total \u00a5" + Math.round(preTax).toLocaleString("en-US") + ")</span>";
+    var typical = tax - preTax * 0.0155;
+    var worst = tax - preTax * 0.022;
+    out.innerHTML =
+      "You are owed <strong>" + yen(tax) + "</strong> in consumption tax." +
+      "<br><span class='small'>After a handling fee you should realistically receive <strong>" + yen(worst) +
+      "\u2013" + yen(tax) + "</strong> \u2014 typically around <strong>" + yen(typical) +
+      "</strong> at a department store (1.55% of the " + yen(preTax) + " pre-tax total).</span>";
   }
   a.addEventListener("input", calc);
   b.addEventListener("input", calc);
