@@ -32,6 +32,49 @@
     <p>The pattern is so common it has its own genre of forum thread: your card works perfectly at home, works fine at Japanese konbini and hotels — and then flatly refuses to work on the one thing you actually need, usually the Shinkansen booking site at 11pm the night before travel. The error message, helpfully, explains nothing.</p>
     <p>There are three distinct failure modes hiding behind that one generic error. Diagnose which one you have and the fix follows.</p>
 
+    <h2 id="symptom-table">Find your exact symptom</h2>
+    <p>Card failures in Japan look identical from the outside and have completely different causes. Start here — match what you actually saw, then read the matching section below.</p>
+    <div class="table-scroll">
+    <table class="grid-table stack-mobile">
+      <tr><th>What happened</th><th>Most likely cause</th><th>Do this first</th></tr>
+      <tr>
+        <td data-label="What happened"><strong>SmartEX or Eki-Net rejects the card at registration or payment</strong>, with a generic "cannot be used" message</td>
+        <td data-label="Most likely cause">3-D Secure not enrolled on your card</td>
+        <td data-label="Do this first">Enrol in your card app, or try a different brand. Buying at a station counter skips the check entirely</td>
+      </tr>
+      <tr>
+        <td data-label="What happened"><strong>The page asks for a code and nothing arrives</strong></td>
+        <td data-label="Most likely cause">Verification SMS cannot reach a data-only travel eSIM</td>
+        <td data-label="Do this first">Switch your bank to in-app approval, or keep your home SIM active for texts</td>
+      </tr>
+      <tr>
+        <td data-label="What happened"><strong>Declined online, and your bank app shows a "was this you?" alert</strong></td>
+        <td data-label="Most likely cause">Issuer fraud block on a first-ever yen transaction</td>
+        <td data-label="Do this first">Approve it in the app, then retry immediately</td>
+      </tr>
+      <tr>
+        <td data-label="What happened"><strong>Card works in shops but fails on every Japanese website</strong></td>
+        <td data-label="Most likely cause">3-D Secure again — in-person payments do not use it</td>
+        <td data-label="Do this first">Treat online and in-person as two different systems; fall back to counters</td>
+      </tr>
+      <tr>
+        <td data-label="What happened"><strong>A station or konbini ticket machine refuses the card outright</strong></td>
+        <td data-label="Most likely cause">Some older machines never accepted foreign-issued cards</td>
+        <td data-label="Do this first">Staffed counter, then a different machine, then cash</td>
+      </tr>
+      <tr>
+        <td data-label="What happened"><strong>ATM says the transaction cannot be completed</strong></td>
+        <td data-label="Most likely cause">Wrong ATM network, or a home-bank block</td>
+        <td data-label="Do this first">Use 7-Eleven or Japan Post specifically; if it still fails, call your bank</td>
+      </tr>
+      <tr>
+        <td data-label="What happened"><strong>Payment went through but the amount looks inflated</strong></td>
+        <td data-label="Most likely cause">You accepted <a href="pay-in-yen">dynamic currency conversion</a></td>
+        <td data-label="Do this first">Always choose to be charged in yen, at every terminal and ATM</td>
+      </tr>
+    </table>
+    </div>
+
     <h2>Failure 1: 3-D Secure — the big one for Japanese websites</h2>
     <p><strong>What's happening:</strong> Japan moved to require EMV 3-D Secure (the "verify with your bank" step) for e-commerce card payments, with the mandate phased in from spring 2025 (<a href="https://stripe.com/us/resources/more/3d-secure-mandatory-for-ecommerce-in-japan" rel="noopener">overview via Stripe</a>). Sites like SmartEX (Tokaido Shinkansen) and Eki-Net (JR East) now push your card through that verification. If your card was never enrolled in 3-D Secure by your home bank — common for some US-issued cards — the check can't complete and the site rejects the card with a generic failure.</p>
     <p><strong>Fixes:</strong> before your trip, log into your card's app and look for "online purchase verification," "3-D Secure," or "Verified by Visa / Mastercard Identity Check" enrollment. Try a different card brand if one keeps failing — traveler reports consistently show one card sailing through where another fails on the same site. And know the offline escape hatch: <strong>ticket counters and station machines take physical cards in person</strong>, where 3-D Secure doesn't apply — you lose the early-booking convenience, not the trip.</p>
