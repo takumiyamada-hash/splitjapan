@@ -233,3 +233,13 @@ input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 
   border-radius: 999px; padding: 10px 22px; font-weight: 700; font-size: 0.9rem;
   z-index: 99; white-space: nowrap;
 }
+
+.other-trip {
+  display: block; width: 100%; text-align: left; cursor: pointer;
+  background: var(--card-2); border: 1px solid var(--line); border-radius: 10px;
+  padding: 12px 14px; margin-bottom: 8px; font-family: inherit; color: var(--text);
+}
+.other-trip:last-child { margin-bottom: 0; }
+.other-trip:hover { border-color: var(--accent); }
+.ot-name { display: block; font-weight: 700; font-size: 0.98rem; }
+.ot-meta { display: block; color: var(--muted); font-size: 0.82rem; margin-top: 3px; }

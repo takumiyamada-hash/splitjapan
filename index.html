@@ -5,11 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>SplitJapan — Split your Japan trip, not your friendships</title>
 <meta name="description" content="The bill splitter built for Japan trips. No signup, no app install. Enter in yen, settle in your currency. Works offline in the subway.">
+<link rel="canonical" href="https://splitjapan.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SplitJapan">
 <meta property="og:title" content="SplitJapan — Japan trip bill splitting">
 <meta property="og:description" content="One person paid the izakaya bill again? Track it in 15 seconds. No signup. Everyone just opens a link.">
 <meta property="og:url" content="https://splitjapan.com/">
 <meta property="og:image" content="https://splitjapan.com/icon-512.png">
-<link rel="canonical" href="https://splitjapan.com/">
+<meta property="og:image:alt" content="SplitJapan">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SplitJapan — Japan trip bill splitting">
+<meta name="twitter:description" content="One person paid the izakaya bill again? Track it in 15 seconds. No signup. Everyone just opens a link.">
+<meta name="twitter:image" content="https://splitjapan.com/icon-512.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -43,6 +51,12 @@
 
       <button id="start-trip" class="primary-btn" type="button">Start tracking</button>
       <p class="hint">Each person picks their home currency — everyone sees<br>their own share in their own money.</p>
+    </div>
+
+    <div id="other-trips" class="card hidden">
+      <h2 class="section-title">Your other trips</h2>
+      <p class="hint" style="margin-top:0">Trips you opened before are kept on this device. Nothing was deleted.</p>
+      <div id="other-trips-list"></div>
     </div>
 
     <div class="card how-it-works">

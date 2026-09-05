@@ -160,8 +160,49 @@ function computeSettlement(bal) {
 const $ = id => document.getElementById(id);
 function member(id) { return trip.members.find(m => m.i === id); }
 
+function archivedTrips() {
+  const out = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (!k || !k.startsWith("sj_trip_")) continue;
+    const t = lsGet(k);
+    if (t && t.id && (!trip || t.id !== trip.id)) out.push({ key: k, trip: t });
+  }
+  return out.sort((a, b) => (b.trip.u || 0) - (a.trip.u || 0));
+}
+
+function renderOtherTrips() {
+  const card = $("other-trips"), list = $("other-trips-list");
+  if (!card || !list) return;
+  const items = archivedTrips();
+  card.classList.toggle("hidden", items.length === 0);
+  if (!items.length) return;
+  list.innerHTML = items.map(({ key, trip: t }) => {
+    const total = (t.ex || []).reduce((s, e) => s + e.jpy, 0);
+    return `<button class="other-trip" type="button" data-key="${esc(key)}">
+      <span class="ot-name">${esc(t.name || "Trip")}</span>
+      <span class="ot-meta">${t.members.length} people · ${fmt("JPY", total)} · ${(t.ex || []).length} ${(t.ex || []).length === 1 ? "expense" : "expenses"}</span>
+    </button>`;
+  }).join("");
+  list.querySelectorAll(".other-trip").forEach(el => el.onclick = () => {
+    const incoming = lsGet(el.dataset.key);
+    if (!incoming) return;
+    if (trip) lsSet("sj_trip_" + trip.id, trip);
+    localStorage.removeItem(el.dataset.key);
+    trip = incoming;
+    viewerId = lsGet("sj_viewer_" + trip.id);
+    saveTrip();
+    render();
+    toast(`Reopened "${trip.name}"`);
+  });
+}
+
 function render() {
-  if (!trip) { $("setup").classList.remove("hidden"); $("main").classList.add("hidden"); return; }
+  if (!trip) {
+    $("setup").classList.remove("hidden"); $("main").classList.add("hidden");
+    renderOtherTrips();
+    return;
+  }
   $("setup").classList.add("hidden");
   $("main").classList.remove("hidden");
 
