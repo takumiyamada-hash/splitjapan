@@ -1,0 +1,8 @@
+.git
+.gitignore
+.assetsignore
+wrangler.jsonc
+node_modules
+.claude
+serve.mjs
+NOTES.local.md
