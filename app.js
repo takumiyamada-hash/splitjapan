@@ -19,7 +19,10 @@ let ratesLive = false;
 async function loadRates() {
   const cached = lsGet("sj_rates");
   if (cached && Date.now() - cached.t < 12 * 3600 * 1000) {
-    rates = cached.r; ratesLive = true; updateRateStatus(); return;
+    // Cached rates still count as loaded rates: the first paint used the
+    // fallback table, so the screen has to be redrawn or every home-currency
+    // figure stays wrong until something else triggers a render.
+    rates = cached.r; ratesLive = true; updateRateStatus(); render(); return;
   }
   let got = null;
   try {
