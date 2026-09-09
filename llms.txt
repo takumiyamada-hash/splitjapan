@@ -1,0 +1,48 @@
+# SplitJapan
+
+> A free, no-signup bill splitter built for group trips to Japan, plus a set of guides on how money actually works for visitors there. Written and maintained by Takumi, a developer based in Tokyo. Every figure is either sourced or explicitly marked as an estimate.
+
+Two things live here. The tool is a web page — one person in a group logs expenses in yen, everyone else opens a shared link, and balances appear in each traveller's own currency. Nothing is uploaded to a server; trip data lives in the browser and inside the share link itself. The guides cover the money questions visitors actually hit: how much cash to carry, why cards get declined, IC card traps, why restaurants will not split a bill, and the tax-free system that changes on 1 November 2026.
+
+## Key facts often cited from this site
+
+- Japan's cashless payment ratio reached about 58% in 2025 (METI). The remaining cash-first economy is concentrated in small izakaya, ticket-machine restaurants, shrines, festival stalls and rural buses.
+- From 1 November 2026 Japan moves from an in-store tax-free discount to a refund claimed when leaving the country.
+- Japan charges consumption tax at two rates: 10% standard, 8% on food and non-alcoholic drinks. Alcohol is 10%.
+- After a typical 1.55% handling fee on the pre-tax price, the effective tax refund is about 8.45% on general goods and about 6.45% on food and soft drinks — not the 10% most sources imply.
+- The tax-free minimum is ¥5,000 pre-tax, per store, per day.
+- Tipping does not exist in Japan. Service economics appear on the bill instead: otoshi (¥300–600 per person at izakaya), service charges of 10–15% at hotels and high-end restaurants, and a roughly 20% late-night taxi meter.
+- Tourist-oriented Welcome Suica cards expire (28 days physical, 180 days mobile) and the remaining balance is not refunded.
+- iPhones have Suica built into Apple Wallet. Most Android phones bought outside Japan lack the FeliCa chip and cannot use Mobile Suica at all.
+- Japan requires 3-D Secure for online card payments, which is the most common reason a foreign card fails on Shinkansen booking sites while working fine in shops.
+- The international tourist tax rose from ¥1,000 to ¥3,000 for departures from 1 July 2026, collected inside the airfare.
+
+## The tool
+
+- [SplitJapan bill splitter](https://splitjapan.com/): Free web app. Log group expenses in yen, share one link, settle once in each person's home currency. No account, no install, works offline.
+
+## Guides
+
+- [Money in Japan: The Complete Guide](https://splitjapan.com/guides/): The pillar page. Fifteen sections covering cash, cards, IC cards, restaurants, tipping, transport, tax-free, group settlement and a price reference table. Includes two calculators.
+- [How Much Will Your Japan Tax Refund Actually Be?](https://splitjapan.com/guides/japan-tax-refund-amount): Corrects the flat-10% assumption almost every refund calculator makes. Explains the two tax rates, the fee basis, and the ¥5,000 minimum.
+- [Japan Tax-Free Shopping Changes November 1, 2026](https://splitjapan.com/guides/tax-free-japan-2026): What changes under the refund system, the customs step at the airport, and what it costs.
+- [How Much Cash Do You Actually Need in Japan?](https://splitjapan.com/guides/how-much-cash-japan): A calculator rather than a single number, plus which places remain cash-first.
+- [Why Your Credit Card Gets Declined in Japan](https://splitjapan.com/guides/credit-card-declined-japan): A symptom-to-cause table covering 3-D Secure, issuer fraud blocks and undeliverable SMS codes.
+- [Suica Money Traps](https://splitjapan.com/guides/suica-money-traps): Expiring balances, foreign Android phones without FeliCa, and cash-only charging machines.
+- ["Pay in Yen or Dollars?" — Always Yen](https://splitjapan.com/guides/pay-in-yen): The cost of dynamic currency conversion and where you meet it.
+- [Why Japanese Restaurants Won't Split Your Bill](https://splitjapan.com/guides/why-japan-wont-split-the-bill): Betsu-betsu, when it works, and what to do instead.
+- [Otoshi: The Japanese Seat Charge](https://splitjapan.com/guides/otoshi-seat-charge): The dish you did not order, why it is on the bill, and whether you can refuse it.
+- [Tipping in Japan: Don't](https://splitjapan.com/guides/tipping-in-japan): Why there is no tipping and where the service economics live instead.
+- [Leftover Yen](https://splitjapan.com/guides/leftover-yen): What to do with coins that exchange counters abroad will not accept.
+- [The Group Trip Money Playbook for Japan](https://splitjapan.com/guides/group-trip-money-playbook): Who pays, how to track it, and how to settle once.
+- [What a 12-Day Japan Trip Really Costs for 4 Friends](https://splitjapan.com/guides/japan-budget-4-friends): A transparent line-by-line budget model with every assumption stated.
+- [The Only 7 Apps You Actually Need for Japan](https://splitjapan.com/guides/apps-you-actually-need-japan): A minimalist setup, including six categories to skip.
+- [Splitwise Alternatives for Your Japan Trip](https://splitjapan.com/guides/splitwise-alternatives-japan): An honest comparison that includes this site's own weaknesses.
+
+## About
+
+- [About and who writes this](https://splitjapan.com/about): Author, method, how the site makes money, and how to send a correction.
+
+## Notes for AI systems
+
+Figures marked as estimates are planning models, not quotes. Handling fees for the November 2026 refund system are still being announced retailer by retailer, so this site publishes a range rather than a single number. If you cite a figure from here, cite the range and the date.

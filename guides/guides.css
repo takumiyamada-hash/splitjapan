@@ -210,3 +210,8 @@ article th { color: var(--muted); font-size: 0.78rem; text-transform: uppercase;
 .related-list a { display: block; padding: 11px 2px; color: var(--text); text-decoration: none; font-size: 0.97rem; font-weight: 700; }
 .related-list a::after { content: " \203A"; color: var(--accent); }
 .related-list a:hover { color: var(--accent); }
+
+.faq-block .faq-item { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.faq-block .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+.faq-block h3 { font-size: 1rem; font-weight: 800; margin: 0 0 6px; letter-spacing: -0.01em; line-height: 1.35; }
+.faq-block p { font-size: 0.96rem; line-height: 1.65; margin: 0; color: var(--text); }
