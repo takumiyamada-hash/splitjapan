@@ -55,3 +55,9 @@ User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://splitjapan.com/sitemap.xml
+
+# Atom feed of all guides
+# https://splitjapan.com/feed.xml
+
+# What this site knows, for answer engines
+# https://splitjapan.com/llms.txt

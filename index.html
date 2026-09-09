@@ -18,6 +18,7 @@
 <meta name="twitter:title" content="SplitJapan — Japan trip bill splitting">
 <meta name="twitter:description" content="One person paid the izakaya bill again? Track it in 15 seconds. No signup. Everyone just opens a link.">
 <meta name="twitter:image" content="https://splitjapan.com/icon-512.png">
+<link rel="alternate" type="application/atom+xml" title="SplitJapan guides" href="/feed.xml">
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -38,10 +39,11 @@
 </script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <div id="app">
 
   <!-- ===== Setup screen ===== -->
-  <section id="setup" class="screen">
+  <section id="main-content" class="screen">
     <header class="brand">
       <h1>SplitJapan</h1>
       <p class="tagline">Never end a Japan trip with<br>&ldquo;wait&hellip; who owes who how much?&rdquo;</p>
@@ -81,7 +83,7 @@
   <section id="main" class="screen hidden">
     <header class="topbar">
       <div>
-        <h1 id="trip-title">Trip</h1>
+        <h2 id="trip-title">Trip</h2>
         <p id="trip-sub" class="sub"></p>
       </div>
       <button id="share-btn" class="share-btn" type="button">Share</button>
@@ -114,7 +116,7 @@
       <button id="new-trip" class="ghost-btn" type="button">Start your own trip</button>
       <p class="hint">Data lives in this browser and in the share link. Nothing is uploaded.</p>
       <p class="hint" id="rate-status"></p>
-      <p class="hint"><a class="foot-link" href="guides/">Money in Japan: The Complete Guide</a> — cash, cards, Suica, tax-free, tipping<br><a class="foot-link" href="/about">About &amp; who writes this</a></p>
+      <p class="hint"><a class="foot-link" href="guides/">Money in Japan: The Complete Guide</a> — cash, cards, Suica, tax-free, tipping<br><a class="foot-link" href="/glossary">Japan money glossary</a> · <a class="foot-link" href="/about">About &amp; who writes this</a></p>
     </footer>
   </section>
 

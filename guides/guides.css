@@ -215,3 +215,14 @@ article th { color: var(--muted); font-size: 0.78rem; text-transform: uppercase;
 .faq-block .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
 .faq-block h3 { font-size: 1rem; font-weight: 800; margin: 0 0 6px; letter-spacing: -0.01em; line-height: 1.35; }
 .faq-block p { font-size: 0.96rem; line-height: 1.65; margin: 0; color: var(--text); }
+
+.guide-page .brand-name { font-size: 2.1rem; font-weight: 800; letter-spacing: -0.02em; }
+.guide-page .brand-name .home-link::after { content: "."; color: var(--accent); }
+
+.term { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.term:last-of-type { border-bottom: none; }
+.term h2 { font-size: 1.08rem; font-weight: 800; margin: 0 0 6px; letter-spacing: -0.01em; }
+.term-ja { color: var(--muted); font-weight: 400; font-size: 0.95rem; margin-left: 6px; }
+.term p { font-size: 0.97rem; line-height: 1.65; margin: 0 0 6px; }
+.term-more { font-size: 0.85rem; }
+.term-more a { color: var(--accent); font-weight: 700; }

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>SplitJapan — Japan trip money guides</title>
+  <subtitle>How money actually works for visitors to Japan. Written in Tokyo.</subtitle>
+  <link href="https://splitjapan.com/feed.xml" rel="self"/>
+  <link href="https://splitjapan.com/guides/"/>
+  <id>https://splitjapan.com/</id>
+  <updated>2026-09-09T14:58:31Z</updated>
+  <author><name>Takumi</name><uri>https://splitjapan.com/about</uri></author>
+  <rights>© 2026 SplitJapan</rights>
+  <entry>
+    <title>Why Your Credit Card Gets Declined in Japan (and the Fixes That Actually Work)</title>
+    <link href="https://splitjapan.com/guides/credit-card-declined-japan"/>
+    <id>https://splitjapan.com/guides/credit-card-declined-japan</id>
+    <published>2026-08-26T00:00:00Z</published>
+    <updated>2026-09-04T00:00:00Z</updated>
+    <author><name>Takumi</name><uri>https://splitjapan.com/about</uri></author>
+    <summary>Your card works at home, then fails on the Shinkansen booking site, the station ticket machine, or a konbini kiosk. The three real causes — 3-D Secure, issuer fraud blocks, SMS that never arrives — and what to do about each.</summary>
+  </entry>
+  <entry>
+    <title>How Much Will Your Japan Tax Refund Actually Be? (Most Calculators Get This Wrong)</title>
+    <link href="https://splitjapan.com/guides/japan-tax-refund-amount"/>
+    <id>https://splitjapan.com/guides/japan-tax-refund-amount</id>
+    <published>2026-09-03T00:00:00Z</published>
+    <updated>2026-09-04T00:00:00Z</updated>
+    <author><name>Takumi</name><uri>https://splitjapan.com/about</uri></author>
+    <summary>Not 10%. Japan has two consumption tax rates, and after handling fees the real refund is about 8.45% on general goods and 6.45% on food — of the pre-tax price. The correct arithmetic, worked examples, and a calculator that splits the rates.</summary>
+  </entry>
+  <entry>
+    <title>Japan Tax-Free Shopping Changes November 1, 2026: The Refund System Explained</title>
+    <link href="https://splitjapan.com/guides/tax-free-japan-2026"/>
+    <id>https://splitjapan.com/guides/tax-free-japan-2026</id>
+    <published>2026-08-26T00:00:00Z</published>
+    <updated>2026-09-04T00:00:00Z</updated>
+    <author><name>Takumi</name><uri>https://splitjapan.com/about</uri></author>
+    <summary>From November 1, 2026, Japan switches to a refund-style tax-free system: pay full price in store, claim your 10% consumption tax back when you leave. What changes, the fees, and a refund calculator.</summary>
+  </entry>
+  <entry>
+    <title>The Only 7 Apps You Actually Need for Japan (and 6 You Can Skip)</title>
+    <link href="https://splitjapan.com/guides/apps-you-actually-need-japan"/>
+    <id>https://splitjapan.com/guides/apps-you-actually-need-japan</id>
+    <published>2026-08-26T00:00:00Z</published>
+    <updated>2026-08-27T00:00:00Z</updated>
+    <author><name>Takumi</name><uri>https://splitjapan.com/about</uri></author>
+    <summary>Every Japan app list has 25 entries. You need about seven — and two of the most important aren&#x27;t even apps. A minimalist, honest setup for 2026: what to install, what&#x27;s built into your phone already, and what to skip.</summary>
+  </entry>
+  <entry>
+    <title>The Group Trip Money Playbook for Japan: Who Pays, How to Track It, How to Stay Friends</title>
+    <link href="https://splitjapan.com/guides/group-trip-money-playbook"/>
+    <id>https://splitjapan.com/guides/group-trip-money-playbook</id>
+    <published>2026-08-26T00:00:00Z</published>
+    <updated>2026-08-27T00:00:00Z</updated>
+    <author><name>Takumi</name><uri>https://splitjapan.com/about</uri></author>
+    <summary>Money is the #1 way group trips to Japan go wrong — split-check refusals, cash-only izakaya, multi-currency settling. The complete system: the pre-trip conversation, the one-payer rule, the cash plan, and the single settlement.</summary>
+  </entry>
+  <entry>
+    <title>How Much Cash Do You Actually Need in Japan? A Calculator, Not a Guess (2026)</title>
+    <link href="https://splitjapan.com/guides/how-much-cash-japan"/>
+    <id>https://splitjapan.com/guides/how-much-cash-japan</id>
+    <published>2026-08-26T00:00:00Z</published>
+    <updated>2026-08-27T00:00:00Z</updated>
+    <author><name>Takumi</name><uri>https://splitjapan.com/about</uri></author>
+    <summary>Japan is about 58% cashless now — but the other 42% includes exactly the places you&#x27;re traveling for. Instead of a one-size number, here&#x27;s the logic and a calculator: your days, your eating style, your cash figure.</summary>
+  </entry>
+  <entry>
+    <title>What a 12-Day Japan Trip Really Costs for 4 Friends (2026, Modeled Line by Line)</title>
+    <link href="https://splitjapan.com/guides/japan-budget-4-friends"/>
+    <id>https://splitjapan.com/guides/japan-budget-4-friends</id>
+    <published>2026-08-26T00:00:00Z</published>
+    <updated>2026-08-27T00:00:00Z</updated>
+    <author><name>Takumi</name><uri>https://splitjapan.com/about</uri></author>
+    <summary>A transparent, line-by-line budget model for four friends spending 12 days in Tokyo, Kyoto and Osaka at 2026 prices — per person, shared vs personal, and who ends up owing whom. Adjust the assumptions, not the vibes.</summary>
+  </entry>
+  <entry>
+    <title>Leftover Yen: What To Do With Japanese Coins Before You Fly Home</title>
+    <link href="https://splitjapan.com/guides/leftover-yen"/>
+    <id>https://splitjapan.com/guides/leftover-yen</id>
+    <published>2026-08-26T00:00:00Z</published>
+    <updated>2026-08-27T00:00:00Z</updated>
+    <author><name>Takumi</name><uri>https://splitjapan.com/about</uri></author>
+    <summary>Foreign exchange counters won&#x27;t take coins, and Japan&#x27;s no-tipping cash culture guarantees you&#x27;ll have a pocketful. Here&#x27;s every way to land at zero yen — Pocket Change kiosks, spend-down tactics, and the traps.</summary>
+  </entry>
+  <entry>
+    <title>Otoshi: The Japanese Seat Charge Nobody Warned You About</title>
+    <link href="https://splitjapan.com/guides/otoshi-seat-charge"/>
+    <id>https://splitjapan.com/guides/otoshi-seat-charge</id>
+    <published>2026-08-26T00:00:00Z</published>
+    <updated>2026-08-27T00:00:00Z</updated>
+    <author><name>Takumi</name><uri>https://splitjapan.com/about</uri></author>
+    <summary>A small dish you didn&#x27;t order appears, then shows up on the bill at ¥300–600 per person. Otoshi isn&#x27;t a scam — it&#x27;s how izakaya charge for your seat. What it is, when you can refuse, and how to budget for it.</summary>
+  </entry>
+  <entry>
+    <title>&quot;Pay in Yen or Dollars?&quot; — Always Yen. Here&#x27;s the Math on Japan&#x27;s Sneakiest Fee</title>
+    <link href="https://splitjapan.com/guides/pay-in-yen"/>
+    <id>https://splitjapan.com/guides/pay-in-yen</id>
+    <published>2026-08-26T00:00:00Z</published>
+    <updated>2026-08-27T00:00:00Z</updated>
+    <author><name>Takumi</name><uri>https://splitjapan.com/about</uri></author>
+    <summary>ATMs and card terminals in Japan offer to charge you in your home currency. It&#x27;s called dynamic currency conversion, it costs several percent, and the correct answer is always yen. The math, the screens to watch for, and the one exception that isn&#x27;t one.</summary>
+  </entry>
+  <entry>
+    <title>Splitwise Alternatives for Your Japan Trip (2026): An Honest Comparison</title>
+    <link href="https://splitjapan.com/guides/splitwise-alternatives-japan"/>
+    <id>https://splitjapan.com/guides/splitwise-alternatives-japan</id>
+    <published>2026-08-26T00:00:00Z</published>
+    <updated>2026-08-27T00:00:00Z</updated>
+    <author><name>Takumi</name><uri>https://splitjapan.com/about</uri></author>
+    <summary>Splitwise now limits free users to a few expenses per day and charges for currency conversion. Here&#x27;s how Tricount, Splid, and SplitJapan compare for a trip to Japan — tested against yen, cash, and izakaya reality.</summary>
+  </entry>
+  <entry>
+    <title>Suica Money Traps: Expiring Balances, Foreign Phones, and Cash-Only Charging</title>
+    <link href="https://splitjapan.com/guides/suica-money-traps"/>
+    <id>https://splitjapan.com/guides/suica-money-traps</id>
+    <published>2026-08-26T00:00:00Z</published>
+    <updated>2026-08-27T00:00:00Z</updated>
+    <author><name>Takumi</name><uri>https://splitjapan.com/about</uri></author>
+    <summary>Tourist Suica balances can expire unrefunded, most foreign Android phones can&#x27;t run Mobile Suica at all, and charging machines want cash. The five money traps of Japan&#x27;s IC cards, and how to dodge each one.</summary>
+  </entry>
+  <entry>
+    <title>Tipping in Japan: Don&#x27;t. Here&#x27;s What Happens Instead (2026)</title>
+    <link href="https://splitjapan.com/guides/tipping-in-japan"/>
+    <id>https://splitjapan.com/guides/tipping-in-japan</id>
+    <published>2026-08-26T00:00:00Z</published>
+    <updated>2026-08-27T00:00:00Z</updated>
+    <author><name>Takumi</name><uri>https://splitjapan.com/about</uri></author>
+    <summary>No tipping — not taxis, not restaurants, not hotels, not guides on the street. Where the service economics actually live (otoshi, service charges), the rare gray areas, and what to do when you really want to say thank you.</summary>
+  </entry>
+  <entry>
+    <title>Why Japanese Restaurants Won&#x27;t Split Your Bill (and What To Do Instead)</title>
+    <link href="https://splitjapan.com/guides/why-japan-wont-split-the-bill"/>
+    <id>https://splitjapan.com/guides/why-japan-wont-split-the-bill</id>
+    <published>2026-08-26T00:00:00Z</published>
+    <updated>2026-08-27T00:00:00Z</updated>
+    <author><name>Takumi</name><uri>https://splitjapan.com/about</uri></author>
+    <summary>Asking for separate checks in Japan — betsu-betsu — works sometimes, gets refused often, and confuses everyone at an izakaya. Here&#x27;s the etiquette, the phrases, and the system seasoned travelers actually use.</summary>
+  </entry>
+</feed>
