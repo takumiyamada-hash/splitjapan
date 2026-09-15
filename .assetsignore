@@ -6,3 +6,10 @@ node_modules
 .claude
 serve.mjs
 NOTES.local.md
+scripts
+package.json
+AI_MEASUREMENT.md
+QUERY_FANOUT.md
+AUTHORITY.md
+README.md
+fanout-report.md

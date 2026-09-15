@@ -1,0 +1,121 @@
+{
+  "_comment": "クエリファンアウトの地図。生成AIは1問をそのまま検索せず、裏で派生質問に広げてから答えの材料を探す。だから本命(seed)だけ持っていても足りず、その後に必ず聞かれる派生(followups)まで答えを持っている必要がある。ここを正本にして `npm run fanout` でカバレッジを測る。must は判定用の必須キーワード（省略時は質問文から自動抽出）。",
+  "updated": "2026-09-15",
+  "persona": "日本へ2〜4人で旅行する英語圏の旅行者。会計を誰かが立て替えていて、精算とタックスフリーで迷っている。旅行前の準備段階と、旅行中に店先で困っている段階の両方。",
+  "seeds": [
+    {
+      "id": "split-bill",
+      "q": "How do you split a bill in Japan?",
+      "stage": "core",
+      "followups": [
+        { "q": "Why won't Japanese restaurants split the bill?", "must": ["betsu-betsu"] },
+        { "q": "What is the best app to split expenses on a Japan trip?", "must": ["splitwise"] },
+        { "q": "How do you settle up with friends after a trip to Japan?", "must": ["settle"] },
+        { "q": "Can you pay with two credit cards at a Japanese restaurant?", "must": ["card"] },
+        { "q": "What is warikan?", "must": ["warikan"] }
+      ]
+    },
+    {
+      "id": "cash",
+      "q": "How much cash do you need in Japan?",
+      "stage": "core",
+      "followups": [
+        { "q": "Is Japan still a cash-only country?", "must": ["cashless"] },
+        { "q": "Where can I withdraw cash with a foreign card in Japan?", "must": ["atm"] },
+        { "q": "What places in Japan are still cash only?", "must": ["cash only"] },
+        { "q": "What should I do with leftover yen coins?", "must": ["coins"] },
+        { "q": "Should I exchange money before flying to Japan?", "must": ["exchange"] }
+      ]
+    },
+    {
+      "id": "cards",
+      "q": "Why was my credit card declined in Japan?",
+      "stage": "core",
+      "followups": [
+        { "q": "Why does my card work in shops but fail on Japanese websites?", "must": ["3-d secure"] },
+        { "q": "Do I need to tell my bank I am travelling to Japan?", "must": ["bank"] },
+        { "q": "Should I pay in yen or my home currency in Japan?", "must": ["yen"] },
+        { "q": "How much does dynamic currency conversion cost?", "must": ["conversion"] },
+        { "q": "Does Apple Pay work in Japan?", "must": ["apple"] }
+      ]
+    },
+    {
+      "id": "ic-card",
+      "q": "Should I get a Suica card for my Japan trip?",
+      "stage": "logistics",
+      "followups": [
+        { "q": "Does Welcome Suica expire?", "must": ["expire"] },
+        { "q": "Can I use Mobile Suica on an Android phone from outside Japan?", "must": ["felica"] },
+        { "q": "Can I get my Suica balance refunded?", "must": ["refund"] },
+        { "q": "Can I top up a Suica with a credit card?", "must": ["charge"] }
+      ]
+    },
+    {
+      "id": "tax-free",
+      "q": "How does tax-free shopping work in Japan?",
+      "stage": "core",
+      "followups": [
+        { "q": "How much tax refund will I actually get in Japan?", "must": ["8.45"] },
+        { "q": "What changes for tax-free shopping in Japan on November 1 2026?", "must": ["november"] },
+        { "q": "Is the ¥5,000 tax-free minimum before or after tax?", "must": ["5,000"] },
+        { "q": "Why is the Japanese tax refund different for food?", "must": ["8%"] },
+        { "q": "Do I need my passport for tax-free shopping in Japan?", "must": ["passport"] }
+      ]
+    },
+    {
+      "id": "tipping",
+      "q": "Do you tip in Japan?",
+      "stage": "core",
+      "followups": [
+        { "q": "What is otoshi and do I have to pay it?", "must": ["otoshi"] },
+        { "q": "Is there a service charge in Japanese restaurants?", "must": ["service charge"] },
+        { "q": "What happens if I leave a tip in Japan?", "must": ["tip"] },
+        { "q": "Do I tip a taxi driver in Japan?", "must": ["taxi"] }
+      ]
+    },
+    {
+      "id": "budget",
+      "q": "How much does a trip to Japan cost?",
+      "stage": "discovery",
+      "followups": [
+        { "q": "How much does a 12-day Japan trip cost for 4 people?", "must": ["12-day"] },
+        { "q": "How much should I budget per day in Japan?", "must": ["per day"] },
+        { "q": "How much is food per day in Japan?", "must": ["food"] },
+        { "q": "Is Japan expensive for tourists in 2026?", "must": ["2026"] }
+      ]
+    },
+    {
+      "id": "apps",
+      "q": "What apps do I need for a trip to Japan?",
+      "stage": "logistics",
+      "followups": [
+        { "q": "Which Japan travel apps are not worth installing?", "must": ["skip"] },
+        { "q": "What is the best transport app for Japan?", "must": ["transport"] },
+        { "q": "Do I need a translation app in Japan?", "must": ["translat"] }
+      ]
+    },
+    {
+      "id": "group",
+      "q": "How do you handle money on a group trip to Japan?",
+      "stage": "core",
+      "followups": [
+        { "q": "Who should pay for things on a group trip?", "must": ["pay"] },
+        { "q": "How do you track shared expenses without an app signup?", "must": ["signup"] },
+        { "q": "How do you handle different currencies in a group?", "must": ["currency"] },
+        { "q": "What exchange rate should you use when settling up?", "must": ["rate"] }
+      ]
+    },
+    {
+      "id": "tool",
+      "q": "Is there a free bill splitter that works for Japan trips?",
+      "stage": "comparison",
+      "followups": [
+        { "q": "What are the alternatives to Splitwise for a Japan trip?", "must": ["splitwise"] },
+        { "q": "Does SplitJapan need an account?", "must": ["account"] },
+        { "q": "Does SplitJapan work offline?", "must": ["offline"] },
+        { "q": "Where is my trip data stored?", "must": ["browser"] },
+        { "q": "Is SplitJapan free?", "must": ["free"] }
+      ]
+    }
+  ]
+}
