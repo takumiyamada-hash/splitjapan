@@ -67,3 +67,29 @@ npm run build && npm run fanout   # trash-finder は python3 gen_site.py && bash
 - Perplexity の選定（6段階・鮮度15%・150〜300語）: [OtterlyAI](https://otterly.ai/blog/perplexity-seo/), [Authority Tech](https://authoritytech.io/blog/how-perplexity-selects-sources-algorithm-2026), [keyword.com](https://keyword.com/blog/perplexity-search-ranking-factors-seo-guide/)
 - GEO 全般（30日以内更新で3.2倍・Princeton の30〜40%）: [Enrich Labs](https://www.enrichlabs.ai/blog/generative-engine-optimization-geo-complete-guide-2026), [arXiv 2603.09296](https://arxiv.org/pdf/2603.09296)
 - llms.txt の実効性（Google 無視・採用10%・取得極少）: [1ClickReport](https://www.1clickreport.com/blog/llms-txt-evidence-2026), [Digital Applied](https://www.digitalapplied.com/blog/llms-txt-in-practice-adoption-evidence-2026), [Passionfruit](https://www.getpassionfruit.com/blog/should-i-create-an-llms.txt-file-google-s-2026-guidance-explained)
+
+## 6. 2周目の調査で分かったこと（2026-09-16・一次資料）
+
+| 事実 | 影響 | 対応 |
+|---|---|---|
+| **Google は FAQ リッチリザルトを 2026-05-07 に終了**。FAQPage は無効ではないが検索結果には出ない。Google の生成AIガイド（2026-05-15）は「特別なマークアップは不要」と明言 | FAQ schema「だけ」に期待しない。効くのは**可視の質問と答え**と、Article＋author＋Organization | 6サイトで FAQ を可視化済み。Trash Finder に Organization を追加 |
+| **Search Console に「生成AI パフォーマンスレポート」**（2026-06） | AI Overviews / AI モードでの表示・クリックが**公式に計測できる**。「AI Overviews は参照元で区別できない」問題が解決 | GSC 登録が前提（§5）。`AI_MEASUREMENT.md` の計測の柱に加える |
+| **Bing Webmaster Tools に「AI Performance レポート」**（2026-02-11） | Copilot の引用回数と grounding query が見える | BWT 登録が前提（§5） |
+| **2026年3月コアアップデートで Core Web Vitals が複合スコア化** | 遅いページは AI Overviews の候補（＝organic 上位）から外れる | 6サイトを Lighthouse（モバイル）で実測し、LCP が悪い4サイトを修正（下表） |
+| **robots.txt の `Content-Signal`**（Cloudflare/IETF草案: search / ai-input / ai-train） | 「引用してよい」を機械可読で宣言できる | 6サイトに `Content-Signal: search=yes, ai-input=yes, ai-train=yes` |
+| **Google の公式ガイドが禁じること**: llms.txt 等の特殊ファイルに期待する／内容を細切れに「チャンク化」する／AI向けの言い回しに書き換える／不自然な言及を集める／内部指標を持つと称する GEO 業者 | やり過ぎの線引き | 記事本文は変えず、FAQ・データ・冒頭要約の追加に留めている。llms.txt は「害なし・期待せず」 |
+| **日本**: AIモードは 2025-09-09 から日本語提供、AI Overviews→AIモードの遷移が 2026-01 に全世界展開。国内の生成AI利用率 54.7%、日常検索でAI依存は31%。利用は ChatGPT 37% / Gemini 30% / Copilot 17%。Yahoo! JAPAN も AI 回答を並走 | 日本語サイト（FLAG START・アイテル）は **Gemini（＝Google 索引）と Copilot（＝Bing 索引）の両方**が重要 | Bing 側の整備（IndexNow＋BWT）が日本でも直結する |
+| **OpenAI**: OAI-SearchBot（検索用）と GPTBot（学習用）は情報を共有。ChatGPT は参照リンクに `utm_source=chatgpt.com` を付ける | 計測の根拠 | アトリビューション・スニペットで処理済み |
+
+### Core Web Vitals 実測（Lighthouse モバイル・シミュレーション、2026-09-16）
+
+| サイト | 修正前 | 主因 | 対応 |
+|---|---|---|---|
+| Port of Fuji | 65 / LCP 5.7s | Webフォントの CSS がレンダリングをブロック、gtag.js が初期帯域を取る | フォントを非ブロッキング化、gtag.js を load 後に、ヒーロー画像を preload |
+| Port of Japan | 82 / LCP 4.9s | 見出しフォント 178KB の取得待ち | フォントを preload |
+| SplitJapan | 98 / LCP 2.0s | — | 対応不要 |
+| FLAG START | 79 / LCP 3.7s | 背景画像 JPG 298KB＋204KB＋169KB | WebP 化（147KB / 65KB / 81KB） |
+| アイテル | **56 / LCP 27.3s** | 楽天の宿写真をそのまま表示（3.8MB / 1.6MB / 1.2MB）。楽天のサイズ指定パラメータは効かない | 取得時に Content-Length を見て 600KB 以下の候補を優先 |
+| Trash Finder | 88 / LCP 2.8s | — | 対応不要 |
+
+修正後の数字は `npx lighthouse <URL> --only-categories=performance --form-factor=mobile` で再計測して更新する。
