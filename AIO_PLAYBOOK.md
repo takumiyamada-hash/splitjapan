@@ -83,13 +83,15 @@ npm run build && npm run fanout   # trash-finder は python3 gen_site.py && bash
 
 ### Core Web Vitals 実測（Lighthouse モバイル・シミュレーション、2026-09-16）
 
-| サイト | 修正前 | 主因 | 対応 |
-|---|---|---|---|
-| Port of Fuji | 65 / LCP 5.7s | Webフォントの CSS がレンダリングをブロック、gtag.js が初期帯域を取る | フォントを非ブロッキング化、gtag.js を load 後に、ヒーロー画像を preload |
-| Port of Japan | 82 / LCP 4.9s | 見出しフォント 178KB の取得待ち | フォントを preload |
-| SplitJapan | 98 / LCP 2.0s | — | 対応不要 |
-| FLAG START | 79 / LCP 3.7s | 背景画像 JPG 298KB＋204KB＋169KB | WebP 化（147KB / 65KB / 81KB） |
-| アイテル | **56 / LCP 27.3s** | 楽天の宿写真をそのまま表示（3.8MB / 1.6MB / 1.2MB）。楽天のサイズ指定パラメータは効かない | 取得時に Content-Length を見て 600KB 以下の候補を優先 |
-| Trash Finder | 88 / LCP 2.8s | — | 対応不要 |
+| サイト | 修正前 | 修正後 | 主因 | 対応 |
+|---|---|---|---|---|
+| Port of Fuji | 65 / LCP 5.7s | **99 / LCP 2.2s** | Webフォント CSS がブロック、gtag.js と Viator サムネイル4枚がヒーローと帯域を奪い合う | フォント非ブロッキング化、gtag.js を load 後に、ヒーロー preload、画面下サムネイルを低優先度に |
+| Port of Japan | 82 / LCP 4.9s | **92 / LCP 3.2s** | 見出しフォント 178KB の取得待ち | フォントを preload |
+| SplitJapan | 98 / LCP 2.0s | 98 / LCP 1.7s | — | 対応不要 |
+| FLAG START | 79 / LCP 3.7s | **87 / LCP 3.3s** | 背景画像 JPG 298KB＋204KB＋169KB | WebP 化（147KB / 65KB / 81KB） |
+| アイテル | **56 / LCP 27.3s** | **99 / LCP 2.0s** | ①楽天の宿写真 3.8MB / 1.6MB / 1.2MB（サイズ指定パラメータは効かない）②日本語Webフォント2ファミリー×4ウェイト＝108ファイル・約1MB ③プラン画像 JPG | ①取得時に Content-Length 600KB 以下を優先 ②本文を端末フォントに、見出しだけ Zen Kaku 900（24ファイル・221KB）③WebP化 |
+| Trash Finder | 88 / LCP 2.8s | 87 / LCP 2.9s | — | 対応不要 |
 
-修正後の数字は `npx lighthouse <URL> --only-categories=performance --form-factor=mobile` で再計測して更新する。
+計測は `npx lighthouse <URL> --only-categories=performance --form-factor=mobile --screenEmulation.mobile --throttling-method=simulate`（ラボ値・シミュレーション）。実ユーザーの値は GSC の「ウェブに関する主な指標」で追う。
+
+**日本語サイトの教訓**: Google Fonts の日本語は本文に使うと字種の数だけスライスを取得する（アイテルは101ファイル）。本文は端末フォント、Webフォントは見出しの1ウェイトに限るのが定石。
