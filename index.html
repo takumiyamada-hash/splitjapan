@@ -37,6 +37,10 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "SplitJapan", "url": "https://splitjapan.com/", "applicationCategory": "FinanceApplication", "applicationSubCategory": "Expense splitting for group travel", "operatingSystem": "Any modern web browser", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "inLanguage": "en", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Log group expenses in Japanese yen", "Share by link with no account or install", "Balances shown in each traveller's home currency", "Exchange rate locked when an expense is entered", "Minimum-transfer settlement", "Tax-free purchase tracker for the November 2026 refund system", "Works offline"], "author": {"@type": "Person", "name": "Takumi", "url": "https://splitjapan.com/about"}, "publisher": {"@type": "Organization", "name": "SplitJapan", "url": "https://splitjapan.com/", "sameAs": ["https://github.com/takumiyamada-hash/splitjapan"]}}
 </script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is SplitJapan free, and is there a catch?", "acceptedAnswer": {"@type": "Answer", "text": "Free, with no account, no install, no trial and no paid tier. There is nothing to upgrade to. The site carries no display ads; it exists because the same person writes the Japan money guides here, and some of those link to things worth booking."}}, {"@type": "Question", "name": "Do my friends need to sign up or install anything?", "acceptedAnswer": {"@type": "Answer", "text": "No. One person starts the trip and shares a link; everyone else opens it in a browser and picks which traveller they are. There is no account to create, so there is nobody to chase for a password on the last night of the trip."}}, {"@type": "Question", "name": "Where is my trip data stored?", "acceptedAnswer": {"@type": "Answer", "text": "In your own browser, and inside the share link itself. Nothing is uploaded - there are no SplitJapan servers holding your trip, which also means nobody can reset it for you if you clear your browser data and lose the link. Keep the link."}}, {"@type": "Question", "name": "Does SplitJapan work offline?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Logging expenses works with no signal, because the maths happens in your browser. The only thing that needs data is fetching a fresh exchange rate - and rates are locked at the moment you enter an expense, so an offline entry simply uses the last rate it had."}}, {"@type": "Question", "name": "What exchange rate should you use when settling up after a trip?", "acceptedAnswer": {"@type": "Answer", "text": "The rate at the moment each expense was entered, locked to that expense. This is the part that causes arguments in other tools: if you convert everything at the rate on the last day, whoever paid early is quietly subsidising everyone. Locking per expense means the yen amount and each person's home-currency share both stay true."}}, {"@type": "Question", "name": "How does SplitJapan decide who pays whom?", "acceptedAnswer": {"@type": "Answer", "text": "It calculates the minimum number of transfers that clears every balance - one line like “Emma pays Ben ¥9,230” instead of forty small IOUs between six people. You settle once, at the end, in each person's own currency."}}, {"@type": "Question", "name": "Does SplitJapan handle Japanese tax-free purchases?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, as a tracker: mark a purchase as tax-free and it keeps a running total per person, which matters because Japan's ¥5,000 minimum is per store, per day, pre-tax - and from 1 November 2026 the refund is claimed when you leave the country rather than discounted in store."}}]}
+</script>
+<script defer src="/analytics.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -76,6 +80,41 @@
         <li><strong>Settle once, at the end.</strong> "Emma pays Ben ¥9,230" — the minimum number of transfers, not forty IOUs.</li>
       </ol>
       <p class="hint">Your data lives in this browser and in the link itself — there are no SplitJapan servers to crash or lose it.<br>New to Japan-trip money? Read <a class="foot-link" href="guides/">Money in Japan: The Complete Guide</a> — cash, cards, Suica, tax-free, tipping, all in one page.</p>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">Questions people ask before starting</h2>
+      <div class="faq-block">
+        <details>
+          <summary>Is SplitJapan free, and is there a catch?</summary>
+          <p>Free, with no account, no install, no trial and no paid tier. There is nothing to upgrade to. The site carries no display ads; it exists because the same person writes the <a href="/guides/">Japan money guides</a> here, and some of those link to things worth booking.</p>
+        </details>
+        <details>
+          <summary>Do my friends need to sign up or install anything?</summary>
+          <p>No. One person starts the trip and shares a link; everyone else opens it in a browser and picks which traveller they are. There is no account to create, so there is nobody to chase for a password on the last night of the trip.</p>
+        </details>
+        <details>
+          <summary>Where is my trip data stored?</summary>
+          <p>In your own browser, and inside the share link itself. Nothing is uploaded — there are no SplitJapan servers holding your trip, which also means nobody can reset it for you if you clear your browser data and lose the link. Keep the link.</p>
+        </details>
+        <details>
+          <summary>Does it work offline, underground on the subway?</summary>
+          <p>Yes. Logging expenses works with no signal, because the maths happens in your browser. The only thing that needs data is fetching a fresh exchange rate — and rates are locked at the moment you enter an expense, so an offline entry simply uses the last rate it had.</p>
+        </details>
+        <details>
+          <summary>What exchange rate does it use when we settle up?</summary>
+          <p>The rate at the moment each expense was entered, locked to that expense. This is the part that causes arguments in other tools: if you convert everything at the rate on the last day, whoever paid early is quietly subsidising everyone. Locking per expense means the yen amount and each person's home-currency share both stay true.</p>
+        </details>
+        <details>
+          <summary>How does it decide who pays whom?</summary>
+          <p>It calculates the minimum number of transfers that clears every balance — one line like &ldquo;Emma pays Ben ¥9,230&rdquo; instead of forty small IOUs between six people. You settle once, at the end, in each person's own currency.</p>
+        </details>
+        <details>
+          <summary>Does it handle Japanese tax-free purchases?</summary>
+          <p>Yes, as a tracker: mark a purchase as tax-free and it keeps a running total per person, which matters because Japan's ¥5,000 minimum is per store, per day, pre-tax — and from 1 November 2026 the refund is claimed when you leave the country rather than discounted in store. The arithmetic behind the refund is in <a href="/guides/japan-tax-refund-amount">the refund guide</a>.</p>
+        </details>
+      </div>
+      <p class="hint">More money questions, answered: <a class="foot-link" href="/answers">the answers index</a> · <a class="foot-link" href="/data">the numbers, with sources</a></p>
     </div>
   </section>
 

@@ -1,0 +1,13 @@
+{
+  "name": "splitjapan",
+  "private": true,
+  "type": "module",
+  "description": "Static site. No build step — these scripts are maintenance tools, not a bundler.",
+  "scripts": {
+    "dev": "node serve.mjs",
+    "answers": "node scripts/build-answers.mjs",
+    "analytics": "node scripts/inject-analytics.mjs",
+    "fanout": "node scripts/fanout-coverage.mjs",
+    "check": "node scripts/build-answers.mjs && node scripts/inject-analytics.mjs && node scripts/fanout-coverage.mjs"
+  }
+}

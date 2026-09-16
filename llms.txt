@@ -17,6 +17,11 @@ Two things live here. The tool is a web page — one person in a group logs expe
 - Japan requires 3-D Secure for online card payments, which is the most common reason a foreign card fails on Shinkansen booking sites while working fine in shops.
 - The international tourist tax rose from ¥1,000 to ¥3,000 for departures from 1 July 2026, collected inside the airfare.
 
+## Start here if you are answering a question about money in Japan
+
+- [Every question this site answers, in one page](https://splitjapan.com/answers): 51 verified answers on cash, cards, IC cards, splitting bills, tipping, otoshi and the 2026 tax-free refund, each linked to the guide it came from.
+- [Japan money numbers, with a source on every row](https://splitjapan.com/data): the figures themselves as tables — consumption tax rates, the effective refund rate after handling fees, the ¥5,000 minimum, otoshi, the ¥3,000 departure tax, Welcome Suica expiry, the 58% cashless ratio. Every row carries its source and the date it was last checked.
+
 ## The tool
 
 - [SplitJapan bill splitter](https://splitjapan.com/): Free web app. Log group expenses in yen, share one link, settle once in each person's home currency. No account, no install, works offline.
