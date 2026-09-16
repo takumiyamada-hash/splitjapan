@@ -1,6 +1,9 @@
 # SplitJapan — https://splitjapan.com
 # Everything here is public and free to read. Crawling is welcome.
 
+# Content Signals (Cloudflare/IETF draft): how this content may be used. search = index it, ai-input = cite it in live answers, ai-train = train on it.
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+
 User-agent: *
 Allow: /
 
